@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import navbar %}
+
+{% block styles %}
+<style>
+  body {
+    background: black;
+    color: white;
+    text-align: center;
+  }
+
+  td,
+  th {
+    color: white;
+    text-align: center;
+  }
+
+  .col {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+  {{ navbar('/admin') }}
+
+  <h2 class="mb-2">Usuarios registrados</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Validado</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpo">
+
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %}
+
+
+
